@@ -20,7 +20,7 @@ class ItemTrack extends StatelessWidget {
           children: [
             Positioned.fill(
               child: GestureDetector(
-                child: Image.network('${track["spotify"]["album"]["images"][0]["url"]}', fit: BoxFit.fill),
+                child: Image.network('${track["image"]}', fit: BoxFit.fill),
                 onTap: (){
                   showDialog<String>(
                     context: context,
@@ -86,8 +86,8 @@ class ItemTrack extends StatelessWidget {
                   showDialog<String>(
                   context: context,
                   builder: (BuildContext context) => AlertDialog(
-                    title: const Text('Agregar a Favoritos'),
-                    content: const Text('El elemento sreá agregado a tus Favoritos ¿Quieres continuar?'),
+                    title: const Text('Quitar de Favoritos'),
+                    content: const Text('El elemento será eliminado de tus Favoritos ¿Quieres continuar?'),
                     actions: <Widget>[
                       TextButton(
                         onPressed: () => Navigator.pop(context, 'Cancel'),
